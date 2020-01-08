@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>DJ刀剑影院</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/daojianlogo.css">
+    <link rel="stylesheet" href="css/sousuokuang.css">
+
+    <link rel="stylesheet" href="layui/css/layui.css">
+
+
+    <!--dplayer css-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/DPlayer.min.css">
+    <link rel="stylesheet" href="css/dplayerindex.css">
+    <style>
+        body {
+            background: #333;
+        }
+
+        img:hover {
+            transform: scale(1.05)
+        }
+
+        img {
+            transition: 0.75s;
+        }
+
+        #b{
+            overflow: hidden;
+        }
+
+       
+    </style>
+
+</head>
+
+<body>
+    <!--广告弹窗-->
+    <div style="float: left;padding: 50px;z-index: 9999;position:fixed;" id="guanggao">
+        <div style="float:right;background: rgb(35, 35, 35);color: rgb(220, 220, 220);"><a href="#"
+                style="text-decoration: none">5秒后关闭，开通会员可免广告</a></div>
+        <div><img src="img/loginbg.jpg" width="100%" id="addImg"></div>
+    </div>
+
+    <!--头部导航-->
+    <div style="background-color: rgb(35, 35, 35)">
+
+        <div id="Box_Background" style="padding-right: 25px;width: 100%">
+            <!--logo-->
+            <div id="Box" style="float: left">
+                <div class="Box"><a href="index.html">
+                        <div class="surface top" style="color: rgb(220, 220, 220)">D</div>
+                        <div class="surface bottom" style="color: rgb(220, 220, 220)">J</div>
+                        <div class="surface left" style="color: rgb(220, 220, 220)">刀</div>
+                        <div class="surface right" style="color: rgb(220, 220, 220)">影</div>
+                        <div class="surface back" style="color: rgb(220, 220, 220)">院</div>
+                        <div class="surface front" style="color: rgb(220, 220, 220)">剑</div>
+                    </a>
+
+                </div>
+            </div>
+            <!--搜索框-->
+            <div style="float: left;margin-left: 45%;margin-top: 45px;">
+                <div class="middle">
+                    <form action="index.html" class="search-box" method="POST">
+                        <input type="text" class="input" name="" value="">
+                        <button type="button" style="outline: none" class="btnm"></button>
+                    </form>
+                </div>
+            </div>
+            <!--搜索按钮-->
+            <div style="float: left;margin-left: 20px;margin-top:15px;"><button type="button"
+                    style="height: 60px;width: 100px;background-color: rgb(35, 35, 35);border: rgb(220, 220, 220) 4px solid;outline: none">
+                    <font style="color: rgb(220, 220, 220);font-weight: bold" size="5">搜 索</font>
+                </button></div>
+
+            <!--用户信息-->
+            <div id="userthing" style="float: right;margin-right: 0px;margin-top:25px">
+                <!--头像-->
+                <div style="color: rgb(220, 220, 220);float: left;margin-right: 20px">
+                    <div class="Odiv" style="width: 50px;height: 50px;border-radius: 50%;overflow: hidden;"><img
+                            src="img/morentouxiang.jpg" style="width: 100%" style="height: 100%"></div>
+
+                </div>
+                <div style="color:rgb(220, 220, 220);float:left;margin-top: 12px"><a href="login.html"
+                        style="color: rgb(220, 220, 220);text-decoration: none">登 陆</a></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--主体-->
+    <div id="allbody" style="margin: 50px;">
+        <div class="row">
+            <!--左侧-->
+            <div class="col-md-9">
+                <div class="card" style="background:rgb(35,35,35);border:#333 5px solid;height: 100%;">
+                    <!--dplayer-->
+                    <div style="margin-top: 10px;padding: 20px;color: rgb(220, 220, 220);float: left;z-index: 100;position:absolute;"
+                        id="videoname">
+                        <div>
+                            <font size="5">我曾将青春还给了她</font>
+                        </div>
+                    </div>
+                    <div class="Dplayer_box">
+                        <div class="player_av">
+                            <div id="player1"></div>
+                        </div>
+
+                        <div class="Dplayer_danmu">
+                            <div class="Dplayer_watching">
+                                <span class="danmuku_num" style="margin-left:70%;">100</span>条弹幕
+                            </div>
+
+                            <ul class="Dplayer_list">
+                                <li>时间</li>
+                                <li>发送内容</li>
+
+                            </ul>
+                            <ul class="list_ovefiow">
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="alert_back">加载中</div>
+                    <!--/dplayer-->
+                </div>
+            </div>
+            <!--右侧-->
+            <div class="col-md-3">
+                <div class="card" style="border:5px #333 solid;background:rgb(35,35,35);height: 100%;">
+                    <div style="margin: 10px;color: rgb(220, 220, 220);">
+                        <font size="4">热门视频</font>
+                    </div>
+                    <!--单个热门视频-->
+                    <div style="margin: 10px;">
+                        <div class="row">
+                            <div class="col-md-6"><img src="img/loginbg.jpg" style="width: 100%;height: 100%;" alt="">
+                            </div>
+                            <div class="col-md-6"><a href="#"
+                                    style="text-decoration: none;color: rgb(220, 220, 220);">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--单个热门视频-->
+                    <div style="margin: 10px;">
+                        <div class="row">
+                            <div class="col-md-6"><img src="img/loginbg.jpg" style="width: 100%;height: 100%;" alt="">
+                            </div>
+                            <div class="col-md-6"><a href="#"
+                                    style="text-decoration: none;color: rgb(220, 220, 220);">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--单个热门视频-->
+                    <div style="margin: 10px;">
+                        <div class="row">
+                            <div class="col-md-6"><img src="img/loginbg.jpg" style="width: 100%;height: 100%;" alt="">
+                            </div>
+                            <div class="col-md-6"><a href="#"
+                                    style="text-decoration: none;color: rgb(220, 220, 220);">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--单个热门视频-->
+                    <div style="margin: 10px;">
+                        <div class="row">
+                            <div class="col-md-6"><img src="img/loginbg.jpg" style="width: 100%;height: 100%;" alt="">
+                            </div>
+                            <div class="col-md-6"><a href="#"
+                                    style="text-decoration: none;color: rgb(220, 220, 220);">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--单个热门视频-->
+                    <div style="margin: 10px;">
+                        <div class="row">
+                            <div class="col-md-6"><img src="img/loginbg.jpg" style="width: 100%;height: 100%;" alt="">
+                            </div>
+                            <div class="col-md-6"><a href="#"
+                                    style="text-decoration: none;color: rgb(220, 220, 220);">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--单个热门视频-->
+                    <div style="margin: 10px;">
+                        <div class="row">
+                            <div class="col-md-6"><img src="img/loginbg.jpg" style="width: 100%;height: 100%;" alt="">
+                            </div>
+                            <div class="col-md-6"><a href="#"
+                                    style="text-decoration: none;color: rgb(220, 220, 220);">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--评论区-->
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-10">
+                <div class="card" style="border: #333 5px solid;background: rgb(35, 35, 35);">
+                    <!--评论头-->
+                    <div style="margin: 20px;color: rgb(220, 220, 220);">
+                        <font size="4">评论</font>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            XXX
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            XXX
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            XXX
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            XXX
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            XXX
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            xxx
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            xxx
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            xxx
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            xxx
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+                    <!--单个评论-->
+                    <div style="margin: 10px;">
+                        <div
+                            style="float: left;color: rgb(220, 220, 220);margin-right: 5px;margin-left: 10px;font-weight: bolder;">
+                            xxx
+                        </div>
+                        <div style="float: left;color: rgb(220, 220, 220);margin-left: 5px;margin-right: 10px;">xxxxxxx
+                        </div>
+                    </div>
+
+                    <!--富文本编辑框-->
+                    <div style="margin: 20px;">
+                        <textarea id="demo" style="display: none;"></textarea>
+                    </div>
+                    <div style="margin: 10px;">
+                        <div style="margin-left:46%;"><button type="button" style="background:rgb(35, 35, 35);color: rgb(220, 220, 220);border:rgb(220, 220, 220) 2px solid;padding: 5px;font-weight: bolder;outline: none;">提 交</button></div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div style="margin: 5px;" id="b"><img src="img/shuguanggao.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <!--页脚-->
+    <div style="height:100px;background:rgb(35, 35, 35)">
+        <div style="color:rgb(220, 220, 220);margin-left: 45%;padding-top:35px;font-weight: bolder">
+            <font size="4">DJyingyuan@neweer</font>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/jquery.min.js"></script>
+
+    <script src="layui/layui.all.js"></script>
+
+    <script src="js/sousuokuang.js"></script>
+    <!--dplayer js-->
+    <script src="js/DPlayer.min.js"></script>
+    <script>
+        console.log(" %c 该项目基于Dplayer.js", 'color:red')
+        var dp = new DPlayer({
+            element: document.getElementById('player1'),
+            video: {
+                //url: 'http://oz4nlgp7a.bkt.clouddn.com/ss.mp4',
+                url: 'video/1.起风了.mp4',
+
+            },
+            danmaku: {
+                //id: 'demo',
+                id: '183f6653124c13ca6b924d021c233f52',
+                //api: 'https://api.prprpr.me/dplayer/',
+                //api: '/x/v3?id=',
+                api: '/x?id='
+                //addition: ['/x?/v3id=183f6653124c13ca6b924d021c233f52']
+            }
+        });
+        // 弹出框
+        function alert_back(text) {
+            $(".alert_back").html(text).show();
+            setTimeout(function () {
+                $(".alert_back").fadeOut();
+            }, 1200)
+        }
+        //秒转分秒
+        function formatTime(seconds) {
+            return [
+                //            parseInt(seconds / 60 / 60),
+                parseInt(seconds / 60 % 60),
+                parseInt(seconds % 60)
+            ]
+                .join(":")
+                .replace(/\b(\d)\b/g, "0$1");
+        }
+        $.ajax({
+            //url: "https://api.prprpr.me/dplayer/bilibili?aid=15572523",
+            url: '/x?id=183f6653124c13ca6b924d021c233f52',
+            success: function (data) {
+                if (data.code == "0") {
+                    //var danmaku = data.danmaku;
+                    var danmaku = data.data;
+                    console.log(data.data[0][4])
+                    var autor = "农民";
+                    var four = 4;
+                    $(".danmuku_num").text(danmaku.length)
+                    $(danmaku).each(function (index, item) {
+                        if (item.type == "right") {
+                        } else {
+                            autor = "地主"
+                        }
+                        //item[],0是time 2是用户 4是内容
+                        var oLi = `   <ol class="danmuku_list" time="${item[0]}">
+            <li>${formatTime(item[0])}</li>
+            <li title="${item[4]}">${item[4]}</li>
+            <li>${item[2]}</li>
+</ol>
+`
+                        $(".list_ovefiow").append(oLi);
+                        autor = "农民";
+                    })
+                } else {
+                    alert_back("弹幕加载失败 -v-!");
+                }
+                $(".danmuku_list").on("click", function () {
+
+                    dp.seek($(this).attr("time"))
+                })
+            }
+        })
+
+
+
+        //每秒刷新
+        setInterval(function () {
+            console.log(dp.video.currentTime);//当前视频播放时间
+            console.log(dp.video.currentTime.toFixed(0));
+
+            dp.danmaku.draw({
+                text: 'DIYgod is amazing',
+                color: '#fff',
+                type: 'right',
+            });
+
+        }, 1000);
+
+        // window.onblur=function(){
+        //     clearInterval(timer)
+        // }
+    </script>
+
+
+    <!--广告隐藏-->
+    <script>
+        $(function () {
+            time = setInterval("hideAd()", 5000);
+        })
+        function hideAd() {
+            document.getElementById("guanggao").style.display = "none";
+            clearInterval(time);
+        }
+    </script>
+
+    <!--富文本编辑框-->
+    <script>
+        layui.use('layedit', function () {
+            var layedit = layui.layedit;
+            layedit.build('demo'); //建立编辑器
+        });
+    </script>
+</body>
+
+</html>
