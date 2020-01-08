@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>DJlogin</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="css/daojianlogo.css">
+    <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/all.css">
+
+    <link rel="stylesheet" href="layui/css/layui.css">
+
+    <link href="css/huadongyanzheng.css" rel="stylesheet" />
+
+
+
+
+    <style>
+        body {
+            background-color: #333
+        }
+
+        /* 图片缓慢放大 */
+		img:hover {
+			transform: scale(1.05);
+			/*放大*/
+		}
+
+		img {
+			
+			transition: 0.75s;
+			/*过渡时间(缓慢放大时间)*/
+        }
+        
+        #b{
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!--头部导航-->
+    <div style="background-color: rgb(35, 35, 35)">
+
+        <div id="Box_Background" class="container" style="margin-left: 0px">
+            <!--logo-->
+            <div id="Box" style="float: left">
+                <div class="Box"><a href="index.html">
+                        <div class="surface top" style="color: rgb(220, 220, 220)">D</div>
+                        <div class="surface bottom" style="color: rgb(220, 220, 220)">J</div>
+                        <div class="surface left" style="color: rgb(220, 220, 220)">刀</div>
+                        <div class="surface right" style="color: rgb(220, 220, 220)">影</div>
+                        <div class="surface back" style="color: rgb(220, 220, 220)">院</div>
+                        <div class="surface front" style="color: rgb(220, 220, 220)">剑</div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!--主体-->
+    <div style="height:560px;margin:15px">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="b"><img src="img/loginbg.jpg" style="width: 100%;height: 100%;" alt=""></div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="border: #333 3px solid;padding: 5px;height: 560px;">
+                    <div class="layui-tab">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">用户登陆</li>
+                            <li>用户注册</li>
+
+                        </ul>
+                        <div class="layui-tab-content">
+                            <!--登陆-->
+                            <div class="layui-tab-item layui-show">
+                                <form action="">
+                                    <div class="form-group" style="margin: 10px">
+                                        <label for="uername">用户名</label>
+                                        <input type="text" name="username" id="username" class="form-control"
+                                            placeholder="请输入用户名" aria-describedby="helpId">
+                                    </div>
+                                    <div style="height: 20px"></div>
+                                    <div class="form-group" style="margin: 10px">
+                                        <label for="uername">密码</label>
+                                        <input type="text" name="username" id="username" class="form-control"
+                                            placeholder="请输入用户密码" aria-describedby="helpId">
+                                    </div>
+                                    <div style="height: 20px"></div>
+                                    <!--滑动验证-->
+
+                                    <div class="form-group" style="margin: 10px">
+                                        <label for="">滑动验证码</label>
+                                        <div class="drag" style="margin-left:10px">
+                                            <div class="bg"></div>
+                                            <div class="text" onselectstart="return false;">请拖动滑块解锁</div>
+                                            <div class="btnx">&gt;&gt;</div>
+                                        </div>
+                                    </div>
+
+                                    <div style="height: 20px"></div>
+
+                                </form>
+                                <div style="margin: 15px"><button class="" type="button"
+                                        style="background: #333;height: 40px;width: 100%;color: white;outline: none;border: #333 4px solid"
+                                        id="denglu">登陆</button></div>
+                            </div>
+                            <!--注册-->
+                            <div class="layui-tab-item">
+                                <form action="" style="padding: 10px">
+                                    <div class="form-group" style="margin-top: 10px">
+                                        <label for="newusername">用户名</label>
+                                        <input type="text" name="newusername" id="newusername" class="form-control"
+                                            placeholder="请输入注册用户名">
+                                    </div>
+                                    <div class="form-group" style="margin-top: 10px">
+                                        <label for="newuserpassword"></label>
+                                        <input type="text" name="newuserpassword" id="newuserpassword"
+                                            class="form-control" placeholder="请输入注册密码">
+                                    </div>
+                                    <div class="form-group" style="margin-top: 10px">
+                                        <div><label for="newemail">邮箱</label></div>
+
+                                        <div style="width: 65%;float: left;"><input type="text" name="newemail"
+                                                id="newemail" class="form-control" placeholder="请输入常用邮箱"></div>
+
+                                        <div style="float: right;width:30%"> <button
+                                                style="width:115px;background: #333;height: 40px;width: 100%;color: white;outline: none"
+                                                type="button" class="btn" id="sendyanzhengma"
+                                                name="sendyanzhengma">发送验证码</button></div>
+
+                                    </div>
+                                    <div class="form-group" style="margin-top: 50px">
+                                        <label for="yanzhengma">验证码</label>
+                                        <input type="text" name="yanzhengma" id="yan'zheng'ma" class="form-control"
+                                            placeholder="请输入邮箱验证码">
+                                    </div>
+                                </form>
+                                <div style="margin-top: 40px;margin-left: 10px;margin-right: 10px"><button class=""
+                                        type="button" style="background: #333;height: 40px;width: 100%;color: white;outline:none;border: #333 4px solid"
+                                        id="zhuce">注册</button></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--页脚-->
+    <div style="height:100px;background:rgb(35, 35, 35)">
+        <div style="color:rgb(220, 220, 220);margin-left: 45%;padding-top:35px;font-weight: bolder">
+            <font size="4">DJyingyuan@neweer</font>
+        </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <script src="layui/layui.js"></script>
+    <script src="js/huadongyanzheng.js" charset="gbk"></script>
+    <!--layui 选项卡-->
+    <script>
+        layui.use('element', function () {
+            var element = layui.element;
+
+        });
+
+
+        var huadongyanzheng = 0;
+
+
+        //60s发送验证码
+        var waitTime = 60;
+        document.getElementById("sendyanzhengma").onclick = function () {
+            document.getElementById('sendyanzhengma').style.background = '#c3c3c3';
+            time(this);
+            setTimeout(huifuyanzhengma, 60000);
+
+        }
+
+
+
+        function huifuyanzhengma() {
+            document.getElementById('sendyanzhengma').style.background = '#333';
+        }
+
+        function time(ele) {
+            if (waitTime == 0) {
+                ele.disabled = false;
+                ele.innerHTML = "发送验证码";
+                waitTime = 60;// 恢复计时
+            } else {
+                ele.disabled = true;
+                ele.innerHTML = waitTime + "秒";
+                waitTime--;
+                setTimeout(function () {
+                    time(ele)// 关键处-定时循环调用
+                }, 1000)
+            }
+        }
+
+        // /60s发送验证码
+
+    </script>
+
+</body>
+
+</html>

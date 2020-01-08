@@ -1,0 +1,34 @@
+.drag{
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(220, 220, 220);
+    position: relative;
+    margin:0 auto;
+}
+.bg{
+    width:40px;
+    height: 100%;
+    position: absolute;
+    background-color: #333;
+}
+.text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    user-select: none;
+}
+.btnx{
+    width:40px;
+    height: 40px;
+    position: absolute;
+    border:1px solid #333;
+    cursor: move;
+    font-family: "宋体";
+    text-align: center;
+    background-color: #333;
+    user-select: none;
+    color:white;
+    z-index:10;
+}
